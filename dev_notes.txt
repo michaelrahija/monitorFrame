@@ -1,0 +1,18 @@
+08/03/2016
+
+Created new version of monitoring notebook template
+
+*Added comments box to workplan table
+*Removed payments table
+*Resized comments box
+*Added revised contractual date column
+*Removed column for # of weeks
+*For expert table, removed Agreed column, and changed to "source"
+
+
+Program:
+*Re-programmed fetch_overview.R to account for multiple versions of notebooks
+*Added parameter to retreive latest modification date
+*Reprogrammed fetch_overview to take account of multiple versioning
+*Modified fetch_overview.R to return message if workplan not completed
+

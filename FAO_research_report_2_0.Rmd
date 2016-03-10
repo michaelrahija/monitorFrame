@@ -1,0 +1,484 @@
+---
+title: 'Monitoring Report'
+author: 'Michael Rahija, Research Officer'
+date: "`r format(Sys.time(),'%B %d , %Y')`"
+output: pdf_document
+classoption: landscape
+---
+
+ 
+
+```{r include=FALSE, cache=FALSE}
+library(XLConnect)
+
+sys <- Sys.info()
+
+if(sys[5] == "x86_64"){
+  dir = "~/Dropbox/monitorFrame" #Mac
+  res.dir = "T:/Team_working_folder/G/11. Research/"
+  ta.dir = "T:/Team_working_folder/G/13.Training/"
+} else if (sys[5] == "Michael"){
+  dir = "C:/Users/Michael/Dropbox/monitorFrame"#HOME PC
+  res.dir = "T:/Team_working_folder/G/11. Research/"
+} else if (sys[6]=="Rahija") {
+  dir = "C:/Users/rahija/Dropbox/monitorFrame" #FAO PC
+  res.dir = "T:/Team_working_folder/G/11. Research/"
+  ta.dir = "T:/Team_working_folder/G/13.Training/"
+} else {
+  stop("Implement location for current user!")
+}
+
+setwd(dir)
+
+#Source required functions
+files = dir(path = paste0(dir, "/R"), full.names = TRUE)
+sapply(files, source)
+
+```
+
+# OUTPUT 3: RESEARCH COMPONENT
+
+## 01-FRAM-3-MSCD           
+### Service provider: Angela Piersante
+
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"01-FRAM-3-MSCD/Monitoring_notebook.xlsx")
+
+overview <- fetch_overview(path = path)
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+
+countries.t <- fetch_countries(path = path)
+knitr::kable(countries.t, caption = "Countries", align = "l")  
+
+comments.t <- fetch_comments(path = path)
+knitr::kable(comments.t, caption = "Comments", align = "l") 
+```
+
+## 03-COLL-1-CostOfProduction          
+### Service provider: Sangita's team/ Focal point: Carola Fabi
+
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"03-COLL-1-CostOfProduction/Monitoring_notebook.xlsx")
+
+overview <- fetch_overview(path = path)
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+
+countries.t <- fetch_countries(path = path)
+knitr::kable(countries.t, caption = "Countries", align = "l")  
+
+comments.t <- fetch_comments(path = path)
+knitr::kable(comments.t, caption = "Comments", align = "l") 
+```
+
+## 03-COLL-2-PostHarvestLosses          
+### Service provider: Kebe / Focal point: Carola Fabi
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"03-COLL-2-PostHarvestLosses/Monitoring_notebook.xlsx")
+
+overview <- fetch_overview(path = path)
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+
+countries.t <- fetch_countries(path = path)
+knitr::kable(countries.t, caption = "Countries", align = "l")  
+
+comments.t <- fetch_comments(path = path)
+knitr::kable(comments.t, caption = "Comments", align = "l") 
+```
+
+
+## 03-COLL-3-CAPI        
+### Service provider: World Bank/Michael / Focal point: Michael Rahija
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"03-COLL-3-CAPI/Monitoring_notebook.xlsx")
+
+overview <- fetch_overview(path = path)
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+
+countries.t <- fetch_countries(path = path)
+knitr::kable(countries.t, caption = "Countries", align = "l")  
+
+comments.t <- fetch_comments(path = path)
+knitr::kable(comments.t, caption = "Comments", align = "l") 
+```
+
+## 05-LIVE-1-LivestockAndProducts
+### Service provider: Uni of New England / Focal point: Neli
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"05-LIVE-1-LivestockAndProducts/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+
+## 06-FOOD-1-FoodBalanceSheets
+### Service provider: ESS / Focal point: ?????
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"06-FOOD-1-FoodBalanceSheets/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+
+## 07-CROP-1&2-AreaYieldProduction           
+### Service provider: IASRI / Focal point: Michael Rahija
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"07-CROP-1&2-AreaYieldProdn-MixedContRepCrops/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 07-CROP-4-HorticulturalCrops         
+### Service provider: FAORAF / Focal point: Michael Rahija
+
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"07-CROP-4-HorticulturalCrops/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 08-REMO-3-Using-LCLU-Databases           
+### Service provider: J. Latham / Focal point: Angela Piersante
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"08-REMO-3-Using-LCLU-Databases/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 09-ADMI-1-Quality&Use-AdminData          
+### Service provider: ISU & MU / Focal point: Flavio Bolliger
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"09-ADMI-1-Quality&Use-AdminData/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 10-FISH-1-AgCensus-Module         
+### Service provider: S. Tsuji and J. Gee  / Focal point: Angela Piersante
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"10-FISH-1-AgCensus-Module/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 11-FORE-1-ForestryStats         
+### Service provider: A. Lebedys & Y. Li / Focal point: Angela Piersante
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"11-FORE-1-ForestryStats/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 11-FORE-2-WoodFuel         
+### Service provider: A. Lebedys & Y. Li / Focal point: Angela Piersante
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"11-FORE-2-WoodFuel/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 14-DATA-1-FarmTypology    
+### Service provider: Mary Ahearn / Focal point: Neli Georgieva
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"14-DATA-1-FarmTypology/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 14-DATA-2-Reconciling-CensSurv        
+### Service provider: FAO-RAF / Focal point: Neli Georgieva
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"14-DATA-2-Reconciling-CensSurv/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 15-SUST-1-Gender        
+### Service provider: ESS / Focal point: Chiara Brunelli
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"15-SUST-1-Gender/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+
+## 15-SUST-2-Youth       
+### Service provider: ?? / Focal point: Monica Madrid
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"15-SUST-2-Youth/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 15-SUST-3-AgriEnviro       
+### Service provider: ?? / Focal point: Monica Madrid
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"15-SUST-3-AgriEnviro/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+
+
+## 15-SUST-4-Productivity       
+### Service provider: ?? / Focal point: 
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"15-SUST-4-Productivity/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 15-SUST-5-Sustainability       
+### Service provider: ?? / Focal point: 
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"15-SUST-5-Sustainability/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+## 16-RURA-1-RuralStats       
+### Service provider: ?? / Focal point: Carola Fabi 
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"16-RURA-1-RuralStats/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
+
+# OUTPUT 4: TRAINING AND TECHNICAL ASSISTANCE
+
+## CAPI-eLearning      
+### Service provider: Consultants / Focal point: Michael Rahija & Carola Fabi 
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(ta.dir,"CAPI-eLearning/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+```
+
+
