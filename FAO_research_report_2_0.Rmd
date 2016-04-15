@@ -224,7 +224,7 @@ knitr::kable(comments.t, caption = "Comments", align = "l")
 ```
 
 ## 09-ADMI-1-Quality&Use-AdminData          
-### Service provider: ISU & MU / Focal point: Flavio Bolliger
+### Service provider: ISU & MU / Focal point: Dramane Bako
 ```{r, echo=FALSE,fig.pos="placeHere"}
 path = paste0(res.dir,"09-ADMI-1-Quality&Use-AdminData/Monitoring_notebook.xlsx")
 overview <- fetch_overview(path = path)
@@ -263,6 +263,25 @@ comments.t <- fetch_comments(path = path)
 knitr::kable(comments.t, caption = "Comments", align = "l")  
 ```
 
+## 10-FISH-2-Fisheries-MSF        
+### Service provider:  / Focal point: Dramane Bako
+```{r, echo=FALSE,fig.pos="placeHere"}
+path = paste0(res.dir,"10-FISH-2-Fisheries-MSF/Monitoring_notebook.xlsx")
+overview <- fetch_overview(path = path)
+
+
+knitr::kable(overview, caption = paste0("Overview - ",
+                                        "Updated: ",as.Date(file.mtime(path))),
+             align = "l") 
+
+countries.t <- fetch_countries(path = path)
+
+knitr::kable(countries.t, caption = "Countries", align = "l") 
+
+comments.t <- fetch_comments(path = path)
+
+knitr::kable(comments.t, caption = "Comments", align = "l")  
+```
 ## 11-FORE-1-ForestryStats         
 ### Service provider: A. Lebedys & Y. Li / Focal point: Angela Piersante
 ```{r, echo=FALSE,fig.pos="placeHere"}
@@ -365,7 +384,7 @@ knitr::kable(comments.t, caption = "Comments", align = "l")
 
 
 ## 15-SUST-2-Youth       
-### Service provider: ?? / Focal point: Monica Madrid
+### Service provider: ?? / Focal point: Michael Rahija
 ```{r, echo=FALSE,fig.pos="placeHere"}
 path = paste0(res.dir,"15-SUST-2-Youth/Monitoring_notebook.xlsx")
 overview <- fetch_overview(path = path)
@@ -481,4 +500,5 @@ knitr::kable(overview, caption = paste0("Overview - ",
 
 ```
 
+##WELCOME TO NEW COLLEAGUES!
 
